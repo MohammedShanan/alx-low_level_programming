@@ -7,8 +7,8 @@
 
 int main(void)
 {
-	char qoute[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char arr[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	fwrite(qoute, sizeof(qoute) - 1, 1, stdout);
+	fwrite(arr, sizeof(arr) - 1, 1, stdout);
 	return (1);
 }
