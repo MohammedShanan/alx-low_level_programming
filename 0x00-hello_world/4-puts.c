@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- *main uses puts to write a line or string to the output stream
- *return 0
+ *main - uses puts to write a line or string to the output stream
+ *Return: 0
  */
 
 int main(void)
