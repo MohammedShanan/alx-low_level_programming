@@ -22,10 +22,6 @@ int main(void)
 
                 for (o = ones + 1; o <= '9'; o++)
                 {
-                    if ((t == tens) && (o == ones))
-                    {
-                        continue;
-                    }
                     putchar(tens);
                     putchar(ones);
                     putchar(' ');
