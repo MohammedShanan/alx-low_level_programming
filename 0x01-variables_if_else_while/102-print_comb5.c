@@ -19,7 +19,7 @@ for (ones = '0'; ones <= '9'; ones++)
 {
 for (t = tens; t <= '9'; t++)
 {
-for (o = ones; o <= '9'; o++)
+for (o = '0'; o <= '9'; o++)
 {
 if ((o == '0' && t == '0') && (ones == '0' && tens == '0'))
 {
