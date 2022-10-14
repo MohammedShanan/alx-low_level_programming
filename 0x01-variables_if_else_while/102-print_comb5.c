@@ -15,6 +15,7 @@ int main(void)
     int o;
     int n = 0;
     int m = 0;
+    int i = 0;
     for (tens = '0'; tens <= '9'; tens++)
     {
         for (ones = '0'; ones <= '9'; ones++)
@@ -39,12 +40,12 @@ int main(void)
                         putchar(' ');
                     }
                 }
-            n = 0;
+            n = i;
             }
             m++;
             n = m;
         }
-        
+        i++;
     }
     putchar('\n');
     return (0);
