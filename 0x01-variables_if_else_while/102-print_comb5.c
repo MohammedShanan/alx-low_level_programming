@@ -13,13 +13,15 @@ int tens;
 int ones;
 int t;
 int o;
+int i;
 for (tens = '0'; tens <= '9'; tens++)
 {
 for (ones = '0'; ones <= '9'; ones++)
 {
+i = ones + 1
 for (t = tens; t <= '9'; t++)
 {
-for (o = ones + 1; o <= '9'; o++)
+for (o = i; o <= '9'; o++)
 {
 putchar(tens);
 putchar(ones);
@@ -32,6 +34,7 @@ putchar(',');
 putchar(' ');
 }
 }
+i = '0'
 }
 }
 }
