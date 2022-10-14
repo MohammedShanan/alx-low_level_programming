@@ -15,7 +15,7 @@ srand(time(0));
 n = rand() - RAND_MAX / 2;
 if (n < 0)
 {
-        printf("%i is a negative", n);
+printf("%i is a negative", n);
 }
 else if (n > 0)
 {
@@ -23,7 +23,7 @@ printf("%i is a positive", n);
 }
 else
 {
-        printf("0 is zero");
+printf("0 is zero");
 }
 return (0);
 }
