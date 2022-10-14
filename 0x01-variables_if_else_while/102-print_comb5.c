@@ -19,10 +19,6 @@ int main(void)
     {
         for (ones = '0'; ones <= '9'; ones++)
         {
-        // if  (ones == '1')
-        // {
-        //     putchar('\n');
-        // }
             for (t = '0'; t <= '9'; t++)
             {
 
