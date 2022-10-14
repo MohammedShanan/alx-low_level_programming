@@ -17,7 +17,7 @@ for (tens = '0'; tens <= '9'; tens++)
 {
 for (ones = '0'; ones <= '9'; ones++)
 {
-for (t = tens; t <= '9'; t++)
+for (t = '0'; t <= '9'; t++)
 {
 for (o = ones; o <= '9'; o++)
 {
