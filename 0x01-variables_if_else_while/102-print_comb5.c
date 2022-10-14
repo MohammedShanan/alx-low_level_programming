@@ -21,7 +21,7 @@ for (t = tens; t <= '9'; t++)
 {
 for (o = ones; o <= '9'; o++)
 {
-if ((o == ones) && (t == tens))
+if ((t == ones) && (o == tens))
 {
   continue;
 }
