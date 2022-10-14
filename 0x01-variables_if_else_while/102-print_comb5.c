@@ -23,7 +23,7 @@ int main(void)
             for (t = '0'; t <= '9'; t++)
             {
 
-                for (o = '0' + n; o <= '9'; o++)
+                for (o = ones + 1; o <= '9'; o++)
                 {
                     if ((t == tens) && (o == ones))
                     {
