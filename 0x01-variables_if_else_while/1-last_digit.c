@@ -24,7 +24,7 @@ printf("Last digit of %i is %i and is greater than 5\n", n, last_dig);
 }
 else
 {
-printf("Last digit of %i is 0 and is 0\n", 0);
+printf("Last digit of %i is 0 and is 0\n", n);
 }
 return (0);
 }
