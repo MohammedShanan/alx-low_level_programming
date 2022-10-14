@@ -19,7 +19,7 @@ for (ones = '0'; ones <= '9'; ones++)
 {
 for (t = '0'; t <= '9'; t++)
 {
-for (o = '0'; o <= '9'; o++)
+for (o = '1'; o <= '9'; o++)
 {
 putchar(tens);
 putchar(ones);
