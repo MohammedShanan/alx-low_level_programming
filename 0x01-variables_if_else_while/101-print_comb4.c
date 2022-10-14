@@ -9,11 +9,14 @@
  */
 int main(void)
 {
-for (int hundreds = '0'; hundreds <= '9'; hundreds++)
+int hundreds;
+int tens;
+int ones;
+for (hundreds = '0'; hundreds <= '9'; hundreds++)
 {
-for (int tens = hundreds + 1; tens <= '9'; tens++)
+for (tens = hundreds + 1; tens <= '9'; tens++)
 {
-for (int ones = tens + 1; ones <= '9'; ones++)
+for (ones = tens + 1; ones <= '9'; ones++)
 {
 putchar(hundreds);
 putchar(tens);
