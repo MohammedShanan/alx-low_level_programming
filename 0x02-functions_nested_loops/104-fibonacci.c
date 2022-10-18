@@ -9,15 +9,21 @@
 
 int main(void)
 {
-uint64_t a = 0, b = 1;
+unsigned long a = 0, b = 1;
 int i;
-uint64_t sum;
+unsigned long sum;
+long a_part1, a_part2, b_part1, b_part2;
 for (i = 1; i < 93; i++)
 {
 sum = a + b;
 printf("%lu, ", sum);
 a = b;
 b = sum;
+}
+a  
+for (i = 1; i < 99; i++)
+{
+  
 }
 sum = a + b;
 printf("%lu\n", sum);
