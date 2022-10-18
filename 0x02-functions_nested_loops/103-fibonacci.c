@@ -7,9 +7,9 @@
 
 int main(void)
 {
-long a = 0, b = 1;
-long sum;
-long sum_of_evens = 0;
+int a = 0, b = 1;
+int sum;
+int sum_of_evens = 0;
 for (; sum < 4000000;)
 {
 sum = a + b;
