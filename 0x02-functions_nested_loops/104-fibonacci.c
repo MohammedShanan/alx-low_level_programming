@@ -15,7 +15,7 @@ uint64_t sum;
 for (i = 1; i < 98; i++)
 {
 sum = a + b;
-printf("counter is %i,number is %lu\n", i,sum);
+printf("%lu\n", sum);
 a = b;
 b = sum;
 }
