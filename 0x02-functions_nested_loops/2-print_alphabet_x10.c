@@ -20,5 +20,5 @@ _putchar(i);
 _putchar('\n');
 counter++;
 }
-
 }
+
