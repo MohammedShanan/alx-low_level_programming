@@ -82,4 +82,4 @@ void times_table(void);
  * Return: sum
  */
 
-int add(int, int);
+int add(int a, int b);
