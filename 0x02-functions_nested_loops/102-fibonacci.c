@@ -7,7 +7,7 @@
 
 int main(void)
 {
-long a = 0, b = 1; 
+long a = 0, b = 1;
 int i;
 long sum;
 for (i = 1; i < 50 ; i++)
