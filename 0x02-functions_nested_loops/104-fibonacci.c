@@ -16,7 +16,7 @@ long a_part1, a_part2, b_part1, b_part2, sum_part1, sum_part2;
 for (i = 1; i < 93; i++)
 {
 sum = a + b;
-printf("%lu, ", sum);
+printf(", %lu", sum);
 a = b;
 b = sum;
 }
@@ -26,10 +26,11 @@ b_part1 = b / 1000000000;
 b_part2 = b % 1000000000;
 for (; i < 99; i++)
 {
-    overflow = (a_part2 + b_part2) / 1000000000;
-    sum_part2 = (a_part2 + b_part2) % 1000000000;
-    sum_part1 = a_part1 + b_part1 + overflow;
-    printf("%lu%lu", sum_part1, sum_part2);
+overflow = (a_part2 + b_part2) / 1000000000;
+sum_part2 = (a_part2 + b_part2) % 1000000000;
+sum_part1 = a_part1 + b_part1 + overflow;
+printf(", %lu%lu", sum_part1, sum_part2);
 }
+printf("\n")
 return (0);
 }
