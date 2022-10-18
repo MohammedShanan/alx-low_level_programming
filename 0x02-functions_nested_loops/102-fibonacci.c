@@ -11,10 +11,10 @@ int a = 0, b = 1 , i, sum;
 for (i = 1; i < 50 ; i++)
 {
 sum = a + b;
-printf("%d, ", sum);
+printf("%li, ", sum);
 a = b;
 b = sum;
 }
-printf("%d\n", a + b);
+printf("%li\n", a + b);
 return (0);
 }
