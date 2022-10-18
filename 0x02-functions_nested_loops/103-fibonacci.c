@@ -20,6 +20,6 @@ if (sum % 2 == 0 && sum < 4000000)
 sum_of_evens += sum;
 }
 }
-printf("%li\n", sum_of_evens);
+printf("%i\n", sum_of_evens);
 return (0);
 }
