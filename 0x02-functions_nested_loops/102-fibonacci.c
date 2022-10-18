@@ -16,4 +16,5 @@ a = b;
 b = sum;
 }
 printf("%d\n", a + b);
+return (0);
 }
