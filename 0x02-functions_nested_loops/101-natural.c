@@ -15,7 +15,7 @@ for (i = 0; i < counter; i++)
 if (i % 5 == 0 || i % 3 == 0)
 {
 sum += i;
-}   
+}
 }
 printf("%d\n", sum);
 return (0);
