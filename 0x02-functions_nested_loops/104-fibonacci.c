@@ -30,6 +30,10 @@ overflow = (a_part2 + b_part2) / 1000000000;
 sum_part2 = (a_part2 + b_part2) % 1000000000;
 sum_part1 = a_part1 + b_part1 + overflow;
 printf(", %lu%lu", sum_part1, sum_part2);
+a_part1 = b_part1;
+a_part2 = b_part2;
+b_part1 = sum_part1;
+b_part2 = sum_part2;
 }
 printf("\n");
 return (0);
