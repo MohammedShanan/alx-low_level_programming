@@ -16,7 +16,7 @@ long a_part1, a_part2, b_part1, b_part2, sum_part1, sum_part2;
 for (i = 1; i < 93; i++)
 {
 sum = a + b;
-printf(", %lu", sum);
+i == 1 ? printf("%lu", sum) : printf(", %lu", sum);
 a = b;
 b = sum;
 }
