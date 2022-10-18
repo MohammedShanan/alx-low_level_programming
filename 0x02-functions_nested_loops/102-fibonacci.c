@@ -16,6 +16,7 @@ printf("%li, ", sum);
 a = b;
 b = sum;
 }
-printf("%li\n", a + b);
+sum = a + b;
+printf("%li\n", sum);
 return (0);
 }
