@@ -7,3 +7,11 @@
  */
 
 int _putchar(char c);
+
+/**
+ * print_alphabet - prints lowercase alphabet
+ * Return: 0
+ */
+
+void print_alphabet(void);
+
