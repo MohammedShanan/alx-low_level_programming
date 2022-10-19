@@ -5,6 +5,7 @@
 
 /**
  *main - print if a number is positive or negative
+ *@i: number to be checked
  *Return: 0
  */
 
