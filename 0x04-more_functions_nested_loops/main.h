@@ -70,3 +70,10 @@ void print_diagonal(int n);
  */
 
 void print_square(int size);
+
+/**
+ * print_triangle - print triangle with #'s with given size
+ * @size: size of triangle to draw
+ */
+
+void print_triangle(int size);
