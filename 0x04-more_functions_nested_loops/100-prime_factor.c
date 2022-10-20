@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include<stdint.h>
+#include <stdint.h>
 int main(void)
 {
-    int i;
+    unsigned long i;
     int largest_prime = 2;
     unsigned long n = 612852475143;
     while (n % 2 == 0)
@@ -18,7 +18,7 @@ int main(void)
             while (n % i == 0)
             {
                 n = n / i;
-            } 
+            }
         }
     }
     largest_prime = largest_prime > 2 ? largest_prime : 2;
