@@ -7,4 +7,27 @@
  */
 int _putchar(char c);
 
+/**
+ * _isupper - checks for uppercase character
+ * @c: character to check
+ * Return: 1 if uppercase, 0 if lowercase
+ */
+
 int _isupper(int c);
+
+/**
+ * _isdigit - checks for digit character
+ * @c: character to check
+ * Return: 1 if it's a digit , 0 if otherwise
+ */
+
+int _isdigit(int c);
+
+/**
+ * add - add two integers
+ * @a: two integer arguments
+ * @b: two integer arguments
+ * Return: product
+ */
+
+int mul(int a, int b);
