@@ -15,10 +15,8 @@ num = n * -1;
 _putchar('-');
 }
 
-while (tens * 10<= positive)
+while (tens * 10 <= num)
 tens *= 10;
-
-
 while (tens >= 1)
 {
 digit = num / tens;
