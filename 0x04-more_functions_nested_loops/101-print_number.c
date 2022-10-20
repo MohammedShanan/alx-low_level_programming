@@ -7,12 +7,11 @@
 
 void print_number(int n)
 {
-unsigned int tens = 1, num = n;
-char digit;
-if (n < 0)
-{
-_putchar('-');
-num = num * -1;
+    unsigned int tens = 1, num = n, digit;
+    if (n < 0)
+    {
+        _putchar('-');
+        num = num * -1;
 }
 while (tens * 10 <= num)
 {
@@ -20,8 +19,8 @@ tens *= 10;
 }
 while (tens >= 1)
 {
-digit = '0' + (num / tens);
-_putchar(digit);
+digit = (num / tens);
+_putchar('0' + digit);
 num = num % tens;
 tens /= 10;
 }

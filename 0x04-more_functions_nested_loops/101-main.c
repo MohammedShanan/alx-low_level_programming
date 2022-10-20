@@ -8,7 +8,7 @@
 int main(void)
 {
     
-    print_number(402);
+    print_number(-1000000);
     _putchar('\n');
     print_number(1);
     _putchar('\n');
