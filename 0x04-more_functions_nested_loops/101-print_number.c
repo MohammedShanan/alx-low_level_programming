@@ -21,7 +21,7 @@ while (tens >= 1)
 {
 digit = num / tens;
 _putchar(digit + '0');
-num = (num - (digit * tens));
+num = (num - (tens * digit));
 tens /= 10;
 }
 }
