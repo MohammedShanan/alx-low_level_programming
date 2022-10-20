@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * add - add two integers
+ * mul - multiply two integers
  * @a: two integer arguments
  * @b: two integer arguments
  * Return: product
