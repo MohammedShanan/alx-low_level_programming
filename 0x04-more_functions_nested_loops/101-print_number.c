@@ -16,7 +16,10 @@ _putchar('-');
 }
 
 while (tens * 10 <= positive)
+{
 tens *= 10;
+}
+
 while (tens >= 1)
 {
 digit = positive / tens;
