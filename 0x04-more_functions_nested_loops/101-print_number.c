@@ -7,17 +7,17 @@
 
 void print_number(int n)
 {
-unsigned int tens, digit, positive = n;
-double t_beg = 1;
+unsigned int digit, positive = n;
+double tens = 1;
 if (n < 0)
 {
 positive = n * -1;
 _putchar('-');
 }
 
-while (t_beg * 10<= positive)
-t_beg *= 10;
-tens = t_beg ;
+while (tens * 10<= positive)
+tens *= 10;
+
 
 while (tens >= 1)
 {
