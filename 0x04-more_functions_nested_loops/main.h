@@ -48,4 +48,11 @@ void print_most_numbers(void);
  * more_numbers - print 0 to 14 ten times
  */
 
-void more_numbers(void)
+void more_numbers(void);
+
+/**
+ * print_line - print the character "_" n times to draw a line
+ * @n: number of _ to draw
+ */
+
+void print_line(int n);
