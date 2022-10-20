@@ -7,7 +7,7 @@
 
 void print_number(int n)
 {
-int tens = 1;
+unsigned int tens = 1;
 char digit;
 if (n < 0)
 {
