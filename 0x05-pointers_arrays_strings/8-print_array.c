@@ -9,9 +9,9 @@
 void print_array(int *a, int n)
 {
 int i;
-for (i = 0; i < n; i++)
+for (i = 0; i < n - 1 i++)
 {
-printf("%i", a[i]);
+printf("%i, ", a[i]);
 }
-printf("\n");
+printf("%i\n",a[i]);
 }
