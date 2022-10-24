@@ -12,6 +12,6 @@ int i;
 for (i = 0; i < n; i++)
 {
 printf("%i", a[i]);
-i == n - 1 ? puts("\n") : puts(", ");
+i == n - 1 ? puts("\n") : printf(", ");
 }
 }
