@@ -18,7 +18,7 @@ return (0);
 }
 
 /**
- * _num_dig - returns the number of digits in the number
+ * _num_digits - returns the number of digits in the number
  * @indx: indx where number start in the string
  * Return: number of digits
  */
@@ -87,7 +87,8 @@ return (sign % 2 == 0 ? 1 : -1);
 int _atoi(char *s)
 {
 char *num_indx;
-int num, i, tens_deg, num_digs, digit;
+int i, tens_deg, num_digs, digit;
+unsigned int num;
 
 num_indx = get_num_indx(s);
 if (num_indx == 0)
