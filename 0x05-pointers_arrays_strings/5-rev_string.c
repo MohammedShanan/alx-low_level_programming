@@ -1,4 +1,18 @@
 #include "main.h"
+#include <stdio.h>
+
+int _putchar(char c)
+{
+return fwrite(&c, sizeof(c), 1, stdout);
+}
+
+void swap_char(char *a, char *b)
+{
+char tmp;
+tmp = *a;
+*a = *b;
+*b = tmp;
+}
 
 /**
  * _strlen - returns the length of a string
@@ -23,13 +37,16 @@ return (len);
  * @s: string to reverse
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
-int len = _strlen(s) - 1;
-while (len >= 0)
+int i, len;
+len = _strlen(s) - 1;
+
+while (i < len)
 {
-_putchar(*(s + len));
+swap_char((s + i), (s + len));
 len--;
+i++;
 }
 _putchar('\n');
 }
