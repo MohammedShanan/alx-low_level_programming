@@ -23,7 +23,7 @@ return (0);
  * Return: number of digits
  */
 
-int _num_dig(char *indx)
+int _num_digits(char *indx)
 {
 int len;
 len = 0;
@@ -95,7 +95,7 @@ if (num_indx == 0)
 return (0);
 }
 
-num_digs = _num_digs(num_indx);
+num_digs = _num_digits(num_indx);
 tens_deg = num_tens_deg(num_digs);
 num = 0;
 
