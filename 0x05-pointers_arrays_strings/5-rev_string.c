@@ -1,4 +1,19 @@
 #include "main.h"
+
+/**
+ * swap_char - swaps the values of two integers
+ * @a: char to swap
+ * @b: char to swap
+ */
+
+void swap_char(char *a, char *b)
+{
+char tmp;
+tmp = *a;
+*a = *b;
+*b = tmp;
+}
+
 /**
  * _strlen - returns the length of a string
  * @s: string
@@ -25,14 +40,12 @@ return (len);
 void rev_string(char *s)
 {
 int i, j;
-char tmp;
 j = _strlen(s) - 1;
-
+i = 0;
 while (i < j)
 {
-tmp = s[i];
-s[i] = s[j];
-s[j] = tmp;
-i++, j--;
+swap_char((s + i), (s + j));
+j--;
+i++;
 }
 }
