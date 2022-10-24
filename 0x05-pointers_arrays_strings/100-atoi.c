@@ -103,10 +103,10 @@ num = 0;
 for (i = 0; num_digs; i++)
 {
 digit = *(num_indx + i) % '0';
-num += tens_deg * digit;
+num += tens_deg *digit;
 tens_deg /= 10;
 num_digs--;
 }
 
-return (num * num_sign(s, num_indx));
+return (num *num_sign(s, num_indx));
 }
