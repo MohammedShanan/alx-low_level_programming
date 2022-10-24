@@ -1,10 +1,10 @@
 #include "main.h"
-#include <stdio.h>
 
-int _putchar(char c)
-{
-return fwrite(&c, sizeof(c), 1, stdout);
-}
+/**
+ * swap_int - swaps the values of two integers
+ * @a: char to swap
+ * @b: char to swap
+ */
 
 void swap_char(char *a, char *b)
 {
@@ -33,7 +33,7 @@ return (len);
 }
 
 /**
- * print_rev - prints a string, in reverse, followed by a new line
+ * rev_string - reverse a string
  * @s: string to reverse
  */
 
@@ -48,5 +48,4 @@ swap_char((s + i), (s + len));
 len--;
 i++;
 }
-_putchar('\n');
 }
