@@ -18,7 +18,7 @@ return (0);
 
 /**
  * string_toupper - capitalize all letters in string
- * @s: string to manipulate
+ * @str: string to manipulate
  * Return: string with all letters capitalized
  */
 
