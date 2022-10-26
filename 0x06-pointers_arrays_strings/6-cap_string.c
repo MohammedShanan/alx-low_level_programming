@@ -19,7 +19,6 @@ return (0);
 /**
  * char_toupper - capitalize a letter
  * @c: letter to capitalize
- * Return: string with all letters capitalized
  */
 
 void char_toupper(char *c)
