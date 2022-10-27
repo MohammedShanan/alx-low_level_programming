@@ -94,7 +94,7 @@ while (tens >= 1 && buff_counter < buff_size)
 {
 digit = arr[arr_counter] / tens;
 buff[buff_counter] = digit + '0';
-arr[arr_counter] = arr[arr_counter] - tens * digit;
+arr[arr_counter] = arr[arr_counter] - tens *digit;
 tens /= 10;
 buff_counter++;
 }
@@ -168,7 +168,7 @@ int len_n2 = strlen(n2);
 int size_arr1 = get_arr_size(len_n1);
 int size_arr2 = get_arr_size(len_n2);
 int size_sum = size_arr1 > size_arr2 ? size_arr1 + 1 : size_arr2 + 1;
-int *arr1 = malloc(size_arr1 * sizeof(int));
+int *arr1 = malloc(size_arr1 *sizeof(int));
 int *arr2 = malloc(size_arr2 * sizeof(int));
 unsigned int *sum_array;
 if (arr1 == NULL || arr2 == NULL)
