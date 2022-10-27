@@ -58,7 +58,7 @@ return (1);
 }
 
 /**
- * number_to_buffer - write large number from array to buffer
+ * num_to_buff - write large number from array to buffer
  * @buff: buffer to write to
  * @buff_size: size of the buffer
  * @arr: array containing the number
@@ -66,8 +66,7 @@ return (1);
  * Return: 1 on success, 0 on error
  */
 
-int number_to_buffer
-(char *buff, int buff_size, 
+int num_to_buff(char *buff, int buff_size,
 unsigned int arr[], int size_arr)
 {
 int buff_counter = 0, arr_counter = 0, i = 0;
@@ -173,7 +172,7 @@ else
 sum_array[0] = 1;
 }
 
-if (number_to_buffer(r, size_r, sum_array, size_sum) == 0)
+if (num_to_buff(r, size_r, sum_array, size_sum) == 0)
 {
 return (0);
 }
