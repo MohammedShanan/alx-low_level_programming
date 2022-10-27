@@ -94,7 +94,7 @@ while (tens >= 1 && buff_counter < buff_size)
 {
 digit = arr[arr_counter] / tens;
 buff[buff_counter] = digit + '0';
-arr[arr_counter] = arr[arr_counter] - tens *digit;
+arr[arr_counter] = arr[arr_counter] - tens * digit;
 tens /= 10;
 buff_counter++;
 }
@@ -102,6 +102,54 @@ arr_counter++;
 }
 buff[buff_counter] = '\0';
 return (1);
+}
+
+/**
+ * sum_arrays - sum two arrays
+ * @arr1: first number
+ * @arr2: second number
+ * @size_arr1: size of first array
+ * @size_arr2: size of second array
+ * @size_sum: a pointer to the size of the first
+ * Return: a pointer to the sum array
+ */
+
+unsigned int *sum_arrays(int arr1[], int arr2[],
+int size_arr1, int size_arr2, int *size_sum)
+{
+int carry = 0;
+unsigned int max_num = 1000000000, sum = 0;
+int counter = *size_sum - 1;
+unsigned int *sum_array = malloc(*size_sum * sizeof(int));
+
+size_arr1 -= 1, size_arr2 -= 1;
+while (size_arr1 >= 0 || size_arr2 >= 0)
+{
+if (size_arr1 < 0)
+{
+sum = arr2[size_arr2] + carry;
+}
+else if (size_arr2 < 0)
+{
+sum = arr1[size_arr1] + carry;
+}
+else
+{
+sum = arr1[size_arr1] + arr2[size_arr2] + carry;
+}
+carry = sum / max_num;
+sum_array[counter] = sum != max_num ? sum % max_num : max_num;
+size_arr1--, size_arr2--, counter--;
+}
+if (carry == 0 || *(sum_array + 1) == max_num)
+{
+sum_array++, *size_sum -= 1;
+}
+else
+{
+sum_array[0] = 1;
+}
+return (sum_array);
 }
 
 /**
@@ -117,61 +165,21 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 int len_n1 = strlen(n1);
 int len_n2 = strlen(n2);
-int size_n1 = get_arr_size(len_n1);
-int size_n2 = get_arr_size(len_n2);
-int size_sum = size_n1 > size_n2 ? size_n1 + 1 : size_n2 + 1;
-int counter = size_sum - 1;
-int *arr1 = malloc(size_n1 * sizeof(int));
-int *arr2 = malloc(size_n2 * sizeof(int));
-unsigned int *sum_array = malloc(size_sum * sizeof(int));
-int carry = 0;
-unsigned int max_num = 1000000000;
-unsigned int sum = 0;
-unsigned int result = 0;
-
-create_num_array(n1, arr1, size_n1, len_n1);
-create_num_array(n2, arr2, size_n2, len_n2);
-if (arr1 == NULL || arr2 == NULL || sum_array == NULL)
+int size_arr1 = get_arr_size(len_n1);
+int size_arr2 = get_arr_size(len_n2);
+int size_sum = size_arr1 > size_arr2 ? size_arr1 + 1 : size_arr2 + 1;
+int *arr1 = malloc(size_arr1 * sizeof(int));
+int *arr2 = malloc(size_arr2 * sizeof(int));
+unsigned int *sum_array;
+if (arr1 == NULL || arr2 == NULL)
 {
-free(arr1);
-free(arr2);
-free(sum_array);
+free(arr1), free(arr2);
 return (0);
 }
+create_num_array(n1, arr1, size_arr1, len_n1);
+create_num_array(n2, arr2, size_arr2, len_n2);
 
-size_n1 -= 1;
-size_n2 -= 1;
-while (size_n1 >= 0 || size_n2 >= 0)
-{
-if (size_n1 < 0)
-{
-sum = arr2[size_n2] + carry;
-}
-else if (size_n2 < 0)
-{
-sum = arr1[size_n1] + carry;
-}
-else
-{
-sum = arr1[size_n1] + arr2[size_n2] + carry;
-}
-carry = sum / max_num;
-result = sum != max_num ? sum % max_num : max_num;
-sum_array[counter] = result;
-size_n1--;
-size_n2--;
-counter--;
-}
-if (carry == 0 || *(sum_array + 1) == max_num)
-{
-sum_array++;
-size_sum--;
-}
-else
-{
-sum_array[0] = 1;
-}
-
+sum_array = sum_arrays(arr1, arr2, size_arr1, size_arr2, &size_sum);
 if (num_to_buff(r, size_r, sum_array, size_sum) == 0)
 {
 return (0);
