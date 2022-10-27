@@ -1,6 +1,6 @@
 
 /**
- * _strcat - concatenate two strings
+ * _strncat - concatenate two strings
  * @dest: string to be appended to
  * @src: string to append
  * @n: n bytes to concatenate
