@@ -1,35 +1,3 @@
-/**
- * _islower - checks for lowercase character
- * @c: character to check
- * Return: 1 if lowercase, 0 if uppercase
- */
-
-int _islower(int c)
-{
-if (c >= 'a' && c <= 'z')
-{
-return (1);
-}
-else
-{
-return (0);
-}
-}
-
-/**
- * char_toupper - capitalize a letter
- * @c: letter to capitalize
- * Return: uppercase letter
- */
-
-char char_toupper(char c)
-{
-if (_islower(c))
-{
-c -= 32;
-}
-return (c);
-}
 
 /**
  * leet - encode string into 1337 leet
@@ -48,7 +16,7 @@ while (str[i])
 indx = 0;
 while (indx < 5)
 {
-if (chars[indx] == char_toupper(str[i]))
+if (chars[indx] == str[i] || chars[indx] == str[i] - 32)
 {
 str[i] = encode_1337[indx];
 break;
