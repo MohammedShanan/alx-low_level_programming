@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * create_num_array - create an array to store the number
+ * get_arr_size - create an array to store the number
  * @len: number digits in the number
  * Return: size of the array
  */
@@ -21,7 +21,7 @@ return (array_size);
 /**
  * create_num_array - create an array to store the number
  * @s: number
- * @new_array: array to be created
+ * @new_arr: array to be created
  * @size: size of the array
  * @len: number of digits in the number
  * Return: 1 success, 0 on error
@@ -66,7 +66,8 @@ return (1);
  * Return: 1 on success, 0 on error
  */
 
-int number_to_buffer(char *buff, int buff_size, unsigned int arr[], int size_arr)
+int number_to_buffer(char *buff, int buff_size, 
+                    unsigned int arr[], int size_arr)
 {
 int buff_counter = 0, arr_counter = 0, i = 0;
 unsigned int digit;
