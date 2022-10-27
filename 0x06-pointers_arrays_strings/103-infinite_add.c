@@ -66,8 +66,9 @@ return (1);
  * Return: 1 on success, 0 on error
  */
 
-int number_to_buffer(char *buff, int buff_size, 
-                    unsigned int arr[], int size_arr)
+int number_to_buffer
+(char *buff, int buff_size, 
+unsigned int arr[], int size_arr)
 {
 int buff_counter = 0, arr_counter = 0, i = 0;
 unsigned int digit;
