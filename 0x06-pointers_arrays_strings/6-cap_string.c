@@ -62,6 +62,7 @@ char *cap_string(char *s)
 {
 int indx;
 indx = 0;
+char_toupper(s);
 while (s[indx + 1])
 {
 if (is_Separator(s[indx]))
