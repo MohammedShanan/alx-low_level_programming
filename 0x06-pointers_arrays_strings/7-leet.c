@@ -33,7 +33,7 @@ return (c);
 
 /**
  * leet - encode string into 1337 leet
- * @s: string to manipulate
+ * @str: string to manipulate
  * Return: string
  */
 
