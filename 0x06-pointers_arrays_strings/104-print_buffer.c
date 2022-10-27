@@ -12,6 +12,8 @@ void print_buffer(char *b, int size)
 {
 int i, counter = 0, indx = 0;
 char *tmp_buffer = malloc(11 * sizeof(char));
+if (size > 0)
+{
 while (counter < size)
 {
 for (i = 0; i < 10 && counter < size; i++)
@@ -27,7 +29,6 @@ tmp_buffer[i] = b[counter];
 counter++;
 }
 tmp_buffer[i] = '\0';
-
 printf("%08x: ", counter);
 for (i = 0; i < 10; i++)
 {
@@ -46,5 +47,10 @@ printf(" ");
 }
 }
 printf("%s\n", tmp_buffer);
+}
+}
+else
+{
+    printf("\n");
 }
 }
