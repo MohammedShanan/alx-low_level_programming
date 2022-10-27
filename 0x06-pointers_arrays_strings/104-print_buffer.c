@@ -19,23 +19,19 @@ while (counter < size)
 for (i = 0; i < 10 && counter < size; i++)
 {
 if (b[counter] < 32)
-{
 tmp_buffer[i] = '.';
-}
 else
-{
 tmp_buffer[i] = b[counter];
-}
 counter++;
 }
 tmp_buffer[i] = '\0';
-printf("%08x: ", counter);
+indx = counter - strlen(tmp_buffer);
+printf("%08x: ", indx);
 for (i = 0; i < 10; i++)
 {
-indx = (counter - strlen(tmp_buffer) + i);
-if (indx < size)
+if (indx + i < size)
 {
-printf("%02x", b[indx]);
+printf("%02x", b[indx + i]);
 }
 else
 {
@@ -50,7 +46,5 @@ printf("%s\n", tmp_buffer);
 }
 }
 else
-{
-    printf("\n");
-}
+printf("\n");
 }
