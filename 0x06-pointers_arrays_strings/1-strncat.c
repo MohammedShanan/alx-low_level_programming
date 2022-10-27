@@ -1,10 +1,10 @@
 
 /**
- * _strncpy - copies n bytes of a source into buffer of a destination string,
- * @dest: copy source to this buffer
- * @src: this is the source to copy
- * @n: n bytes to be copied
- * Return: copied string
+ * _strcat - concatenate two strings
+ * @dest: string to be appended to
+ * @src: string to append
+ * @n: n bytes to concatenate
+ * Return: concatenated string
  */
 
 char *_strncat(char *dest, char *src, int n)
