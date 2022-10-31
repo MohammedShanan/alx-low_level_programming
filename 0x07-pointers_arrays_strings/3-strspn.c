@@ -10,7 +10,7 @@ unsigned int i, j, counter;
 counter = 0;
 while (*(s + i))
 {
-for ( j = 0; *(accept + j); j++)
+for (j = 0; *(accept + j); j++)
 {
 if (*(s + i) == *(accept + j))
 {
