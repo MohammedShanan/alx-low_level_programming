@@ -6,23 +6,23 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-    unsigned int i, j, counter;
-    counter = 0;
-    while (*(s + i))
-    {
-        for ( j = 0; *(accept + j); j++)
-        {
-            if (*(s + i) == *(accept + j))
-            {
-                counter++;
-                break;
-            }
-            if (*(accept + j + 1) == '\0' && *(s + i) != *(accept + j))
-            {
-                return (counter);
-            }
-        }
-        i++;
-    }
-    return (counter);
+unsigned int i, j, counter;
+counter = 0;
+while (*(s + i))
+{
+for ( j = 0; *(accept + j); j++)
+{
+if (*(s + i) == *(accept + j))
+{
+counter++;
+break;
+}
+if (*(accept + j + 1) == '\0' && *(s + i) != *(accept + j))
+{
+return (counter);
+}
+}
+i++;
+}
+return (counter);
 }
