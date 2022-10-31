@@ -4,7 +4,7 @@
  * @c: character to be located
  * Return: pointer to dest
  */
-char *_strchr(char *s, char c);
+char *_strchr(char *s, char c)
 {
 	while (*s)
 	{
