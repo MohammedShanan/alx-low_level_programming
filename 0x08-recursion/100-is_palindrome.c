@@ -14,7 +14,7 @@ return (1 + _strlen_recursion(++s));
 }
 
 /**
- * compare - compare head and tail indices for match
+ * _is_palindrome - compare head and tail indices for match
  * @head: index starting from left of string
  * @tail: index starting from right of string, moving backwards
  * Return: 1 if palindrome, 0 if not
