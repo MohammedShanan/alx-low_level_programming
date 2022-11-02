@@ -13,5 +13,5 @@ if (y <= 0)
 {
 return (y < 0 ? -1 : 1);
 }
-return ( x == 0 ? 0 : x * _pow_recursion(x, y - 1));
+return (x == 0 ? 0 : x * _pow_recursion(x, y - 1));
 }
