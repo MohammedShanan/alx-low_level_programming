@@ -15,10 +15,10 @@ return (1 + _strlen_recursion(++s));
 
 /**
  * _wildcmp - compare if string with wildcard mattches
- * @s1: one string
- * @s2: one string
- * @len1: length of s1
- * @len2: length of s2
+ * @str1: one string
+ * @str2: one string
+ * @len1: length of str1
+ * @len2: length of str2
  * Return: 1 if matched, 0 if not
  */
 
