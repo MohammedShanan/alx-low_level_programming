@@ -10,44 +10,34 @@
 
 int main(int argc, char *argv[])
 {
-int counter = 0;
-int n = atoi(argv[1]);
+int n, coins = 0;
+
+/* validate input */
 if (argc != 2)
 {
 printf("Error\n");
 return (1);
 }
-if (n < 0)
+
+if (argv[1][0] == '-')
 {
 printf("0\n");
 return (0);
 }
 
+/* convert string to int and calculate coins */
+n = atoi(argv[1]);
 
-if (n >= 25)
-{
-counter += n / 25;
+coins += n / 25;
 n = n % 25;
-}
-if (n >= 10)
-{
-counter += n / 10;
+coins += n / 10;
 n = n % 10;
-}
-if (n >= 5)
-{
-counter += n / 5;
+coins += n / 5;
 n = n % 5;
-}
-if (n >= 2)
-{
-counter += n / 2;
+coins += n / 2;
 n = n % 2;
-}
-if (n >= 1)
-{
-counter += n / 1;
-}
-printf("%i\n", counter);
+coins += n / 1;
+
+printf("%d\n", coins);
 return (0);
 }
