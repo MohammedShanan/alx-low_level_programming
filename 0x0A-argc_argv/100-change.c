@@ -17,6 +17,11 @@ if (argc != 2)
 printf("Error\n");
 return (1);
 }
+if (n > 0)
+{
+printf("0\n");
+}
+
 
 if (n >= 25)
 {
