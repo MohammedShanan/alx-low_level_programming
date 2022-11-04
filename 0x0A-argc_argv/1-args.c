@@ -11,7 +11,7 @@ int main(int argc, char *argv[] __attribute__((unused)))
 {
 if (argc)
 {
-printf("%i\n", argc);
+printf("%i\n", argc - 1);
 }
 
 return (0);
