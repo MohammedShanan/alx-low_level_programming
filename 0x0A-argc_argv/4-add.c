@@ -2,8 +2,10 @@
 #include <stdlib.h>
 /**
  *main - add integers.
-*Return: 0 on success 1 on error
-*/
+ * @argc: argument counter
+ * @argv: pointer to array of arguments
+ *Return: 0 on success 1 on error
+ */
 
 int main(int argc, char *argv[])
 {
