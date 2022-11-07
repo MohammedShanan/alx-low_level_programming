@@ -1,34 +1,5 @@
 #include<stdlib.h>
-/**
- * _strcat - concatenate two strings
- * @dest: string to be appended to
- * @src: string to append
- * Return: concatenated string
- */
 
-char *_strcat(char *dest, char *src)
-{
-int i;
-i = 0;
-while (dest[i])
-{
-i++;
-}
-while (*src)
-{
-*(dest + i) = *src;
-i++, src++;
-}
-*(dest + i) = '\0';
-return (dest);
-}
-#include <stdlib.h>
-#include <stdio.h>
-/**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
- */
 
 int _strlen(char *s)
 {
@@ -41,50 +12,7 @@ s++;
 }
 return (len);
 }
-/**
- * _strcpy - copies the string pointed to by src,
- * including the terminating null byte (\0),
- * to the buffer pointed to by dest
- * @dest: copy source to this buffer
- * @src: this is the source to copy
- * Return: copy of original source
- */
 
-char *_strcpy(char *dest, char *src)
-{
-int i;
-
-for (i = 0; src[i]; i++)
-{
-dest[i] = src[i];
-}
-dest[i] = '\0';
-return (dest);
-}
-
-/**
- * _strdup - returns a pointer to a newly allocated space in memory,
- * which contains a copy of the string given as a parameter
- * @str: string to duplicate
- * Return: pointer to duplicated string in allocated memory
- */
-
-char *_strdup(char *str)
-{
-char *new_str;
-int size;
-if (str == NULL)
-{
-return (NULL);
-}
-size = _strlen(str) + 1;
-new_str = malloc(size);
-if (new_str == NULL)
-{
-return (NULL);
-}
-return (_strcpy(new_str, str));
-}
 
 /**
  * str_concat - concatenates two strings
@@ -96,13 +24,23 @@ return (_strcpy(new_str, str));
 char *str_concat(char *s1, char *s2)
 {
 char *new_str;
+int i = 0, j = 0;
 s1 = s1 == NULL ? "" : s1;
 s2 = s2 == NULL ? "" : s2;
-new_str = _strdup(s1);
+new_str = malloc(_strlen(s1) + _strlen(s2) + 1);
 if (!new_str)
 {
 return (NULL);
 }
-
-return (_strcat(new_str, s2));
+while (i < _strlen(s1)) /* concatenate */
+{
+*(new_str + i) = *(s1 + i);
+i++;
+}
+while (j < _strlen(s2))
+{
+*(new_str + i) = *(s2 + j);
+i++, j++;
+}
+return (new_str);
 }
