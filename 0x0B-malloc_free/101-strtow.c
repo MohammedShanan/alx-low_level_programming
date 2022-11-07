@@ -8,11 +8,8 @@
 int num_of_words(char *text)
 {
     int i, j = 0;
-    char c, c1;
     for (i = 0; text[i]; i++)
     {
-        c = text[i];
-        c1 = text[i + 1];
         if (text[i] != ' ' && (text[i + 1] == ' ' || text[i + 1] == '\0'))
         {
             j++;
