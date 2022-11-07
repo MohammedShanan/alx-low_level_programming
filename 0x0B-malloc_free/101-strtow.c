@@ -56,7 +56,7 @@ tmp[len_tmp] = '\0';
 new_s = malloc(len_tmp);
 if (new_s == NULL)
 {
-    return (NULL);
+return (NULL);
 }
 for (indx = 0; indx <= len_tmp; indx++)
 {
@@ -84,7 +84,7 @@ return (NULL);
 tmp = rm_ext_space(str);
 if (tmp == NULL)
 {
-    return (NULL);
+return (NULL);
 }
 num_words = num_of_words(tmp);
 arr = malloc((num_words + 1) * sizeof(char *));
@@ -95,7 +95,6 @@ return (NULL);
 }
 while (i < num_words)
 {
-
 if (tmp[indx] == ' ' || tmp[indx] == '\0')
 {
 arr[i] = malloc(len_w + 1);
