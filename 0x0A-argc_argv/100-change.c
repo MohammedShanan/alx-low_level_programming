@@ -18,7 +18,11 @@ printf("Error\n");
 return (1);
 }
 
-
+if (argv[1][0] == '-')
+{
+printf("0\n");
+return (0);
+}
 
 /* convert string to int and calculate coins */
 n = atoi(argv[1]);
@@ -31,7 +35,7 @@ coins += n / 5;
 n = n % 5;
 coins += n / 2;
 n = n % 2;
-coins += n / 1;
+
 
 printf("%d\n", coins);
 return (0);
