@@ -50,7 +50,6 @@ char *_strdup(char *str)
 char *new_str;
 int size = _strlen(str) + 1;
 new_str = malloc(size);
-printf("size is %i\n", size);
 if (new_str == NULL)
 {
 return (NULL);
