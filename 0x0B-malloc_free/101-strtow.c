@@ -54,6 +54,11 @@ tmp[len_tmp++] = s[i];
 }
 tmp[len_tmp] = '\0';
 new_s = malloc(len_tmp);
+if (new_s == NULL)
+{
+    return (NULL);
+}
+
 for (indx = 0; indx <= len_tmp; indx++)
 {
 new_s[indx] = tmp[indx];
@@ -70,14 +75,17 @@ return (new_s);
 
 char **strtow(char *str)
 {
-char **arr;
-char *tmp;
+char **arr;char *tmp;
 int i = 0, j = 0, num_words, len_w = 0, indx = 0;
 if (str == NULL || *str == '\0')
 {
 return (NULL);
 }
 tmp = rm_ext_space(str);
+if (tmp == NULL)
+{
+    return (NULL);
+}
 num_words = num_of_words(tmp);
 arr = malloc((num_words + 1) * sizeof(char *));
 if (arr == NULL)
@@ -85,7 +93,6 @@ if (arr == NULL)
 free(arr);
 return (NULL);
 }
-
 while (i < num_words)
 {
 
