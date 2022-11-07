@@ -8,14 +8,14 @@
 
 int _strlen(char *s)
 {
-int len;
-len = 0;
-while (*s)
-{
-len++;
-s++;
-}
-return (len);
+    int len;
+    len = 0;
+    while (*s)
+    {
+        len++;
+        s++;
+    }
+    return (len);
 }
 
 /**
@@ -26,26 +26,31 @@ return (len);
  */
 char *argstostr(int ac, char **av)
 {
-int i, j, indx, len = 0;
-char *new_str;
-if (ac == 0 || av == NULL)
-{
-return (NULL);
-}
-while (i < ac)
-{
-len += _strlen(av[i]);
-i++; 
-}
-len += ac + 1;
-new_str = malloc(sizeof(char) * len);
-for (i = 0; i < ac; i++)
-{
-for (j = 0; j < _strlen(av[i]); j++)
-{
-new_str[indx++] = av[i][j];
-}
-new_str[indx++] = '\n';
-}
-return (new_str);
+    int i, j, indx, len = 0;
+    char *new_str;
+    if (ac == 0 || av == NULL)
+    {
+        return (NULL);
+    }
+    while (i < ac)
+    {
+        len += _strlen(av[i]);
+        i++;
+    }
+    len += (ac + 1);
+    new_str = malloc(sizeof(char) * len);
+    if (new_str == NULL)
+    {
+        free(new_str);
+        return (NULL);
+    }
+    for (i = 0; i < ac; i++)
+    {
+        for (j = 0; j < _strlen(av[i]); j++)
+        {
+            new_str[indx++] = av[i][j];
+        }
+        new_str[indx++] = '\n';
+    }
+    return (new_str);
 }
