@@ -1,6 +1,4 @@
-#include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 /**
  * _strlen - returns the length of a string
  * @s: string
@@ -70,7 +68,7 @@ char **strtow(char *str)
         free(arr);
         return (NULL);
     }
-
+    
     while (i <= num_words)
     {
         if (str[j] == ' ' || str[j] == '\0')
@@ -83,39 +81,4 @@ char **strtow(char *str)
         j++;
     }
     return (arr);
-}
-
-/**
- * print_tab - Prints an array of string
- * @tab: The array to print
- *
- * Return: nothing
- */
-void print_tab(char **tab)
-{
-    int i;
-
-    for (i = 0; tab[i] != NULL; ++i)
-    {
-        printf("%s\n", tab[i]);
-    }
-}
-
-/**
- * main - check the code for ALX School students.
- *
- * Return: 1 if an error occurred, 0 otherwise
- */
-int main(void)
-{
-    char **tab;
-
-    tab = strtow("      ALX School         #cisfun      ");
-    if (tab == NULL)
-    {
-        printf("Failed\n");
-        return (1);
-    }
-    print_tab(tab);
-    return (0);
 }
