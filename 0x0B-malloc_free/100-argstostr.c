@@ -24,34 +24,46 @@ int _strlen(char *s)
  * @av: arguments
  * Return: pointer to array
  */
+/**
+ * argstostr - concatenates all the arguments of your program
+ * @ac: argc
+ * @av: arguments
+ * Return: pointer to array
+ */
+
 char *argstostr(int ac, char **av)
 {
-    int i, j, indx = 0, len = 0;
-    char *new_str;
-    if (ac == 0 || av == NULL)
-    {
+    char *s;
+    int len = 0, i, j, k = 0;
+
+    if (ac == 0 || av == NULL) /* validate input */
         return (NULL);
-    }
-    while (i < ac)
+
+    /* find length to malloc */
+    for (i = 0; i < ac; i++)
     {
         len += _strlen(av[i]);
-        i++;
     }
-    len += (ac + 1);
-    new_str = malloc(len);
-    if (new_str == NULL)
+    len += (ac + 1); /* add space for newlines and null terminator */
+
+    /* allocate memory and free if error */
+    s = malloc(len * sizeof(char));
+
+    if (s == NULL)
     {
-        free(new_str);
+        free(s);
         return (NULL);
     }
+
+    /* insert each arg into *str */
     for (i = 0; i < ac; i++)
     {
         for (j = 0; j < _strlen(av[i]); j++)
         {
-            new_str[indx++] = av[i][j];
+            s[k++] = av[i][j];
         }
-        new_str[indx++] = '\n';
+        s[k++] = '\n';
     }
-    new_str[indx] = '\0';
-    return (new_str);
+
+    return (s);
 }
