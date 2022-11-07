@@ -31,7 +31,7 @@ if (text[i] == ' ')
 j++;
 }
 }
-return j + 1;
+return (j + 1);
 }
 /**
  * rm_ext_space - remove extra spaces from a string
