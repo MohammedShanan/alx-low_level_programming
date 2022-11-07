@@ -26,7 +26,7 @@ int _strlen(char *s)
  */
 char *argstostr(int ac, char **av)
 {
-    int i, j, indx = 0, len = 0;
+    int i, j, indx = 0, len = 0, size;
     char *new_str;
     if (ac == 0 || av == NULL)
     {
@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
         i++;
     }
     len += (ac + 1);
-    new_str = malloc(len * sizeof(char));
+    new_str = malloc(len);
     if (new_str == NULL)
     {
         free(new_str);
