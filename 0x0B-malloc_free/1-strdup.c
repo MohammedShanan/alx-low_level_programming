@@ -1,17 +1,21 @@
-#include<stdlib.h>
+#include <stdlib.h>
+#include<stdio.h>
 /**
- * _strlen_recursion - get the length of a string
+ * _strlen - returns the length of a string
  * @s: string
- * Return: length of the string
+ * Return: length
  */
 
-int _strlen_recursion(char *s)
+int _strlen(char *s)
 {
-if (!*s)
+int len;
+len = 0;
+while (*s)
 {
-return (0);
+len++;
+s++;
 }
-return (1 + _strlen_recursion(++s));
+return (len);
 }
 /**
  * _strcpy - copies the string pointed to by src,
@@ -44,7 +48,9 @@ return (dest);
 char *_strdup(char *str)
 {
 char *new_str;
-new_str = malloc(sizeof(_strlen_recursion(str)) + 1);
+int size = _strlen(str) + 1;
+new_str = malloc(size);
+printf("size is %i\n", size);
 if (new_str == NULL)
 {
 return (NULL);
