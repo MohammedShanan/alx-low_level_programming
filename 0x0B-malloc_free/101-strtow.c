@@ -58,7 +58,6 @@ if (new_s == NULL)
 {
     return (NULL);
 }
-
 for (indx = 0; indx <= len_tmp; indx++)
 {
 new_s[indx] = tmp[indx];
@@ -75,7 +74,8 @@ return (new_s);
 
 char **strtow(char *str)
 {
-char **arr;char *tmp;
+char **arr;
+char *tmp;
 int i = 0, j = 0, num_words, len_w = 0, indx = 0;
 if (str == NULL || *str == '\0')
 {
