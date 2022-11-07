@@ -48,7 +48,12 @@ return (dest);
 char *_strdup(char *str)
 {
 char *new_str;
-int size = _strlen(str) + 1;
+int size;
+if (str == NULL)
+{
+return (NULL);
+}
+size = _strlen(str) + 1;
 new_str = malloc(size);
 if (new_str == NULL)
 {
