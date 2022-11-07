@@ -1,5 +1,5 @@
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * _strlen - returns the length of a string
  * @s: string
@@ -19,36 +19,6 @@ return (len);
 }
 
 /**
- * str_concat - concatenates two strings
- * @s1: string 1
- * @s2: string 2
- * Return: pointer to concatenated string
- */
-
-char *str_concat(char *s1, char *s2)
-{
-char *new_str;
-int i = 0, j = 0;
-s1 = s1 == NULL ? "" : s1;
-s2 = s2 == NULL ? "" : s2;
-new_str = malloc(_strlen(s1) + _strlen(s2) + 1);
-if (!new_str)
-{
-return (NULL);
-}
-while (i < _strlen(s1)) /* concatenate */
-{
-*(new_str + i) = *(s1 + i);
-i++;
-}
-while (j < _strlen(s2))
-{
-*(new_str + i) = *(s2 + j);
-i++, j++;
-}
-return (new_str);
-}
-/**
  * argstostr - concatenates all the arguments of your program
  * @ac: argc
  * @av: arguments
@@ -56,17 +26,26 @@ return (new_str);
  */
 char *argstostr(int ac, char **av)
 {
-int i;
-char *new_str = "";
-char *tmp;
+int i, j, indx, len = 0;
+char *new_str;
 if (ac == 0 || av == NULL)
 {
 return (NULL);
 }
+while (i < ac)
+{
+len += _strlen(av[i]);
+i++; 
+}
+len += ac + 1;
+new_str = malloc(sizeof(char) * len);
 for (i = 0; i < ac; i++)
 {
-tmp = str_concat(av[i], "\n");
-new_str = str_concat(new_str, tmp);
+for (j = 0; j < _strlen(av[i]); j++)
+{
+new_str[indx++] = av[i][j];
+}
+new_str[indx++] = '\n';
 }
 return (new_str);
 }
