@@ -8,22 +8,16 @@
 
 int _strlen(char *s)
 {
-    int len;
-    len = 0;
-    while (*s)
-    {
-        len++;
-        s++;
-    }
-    return (len);
+int len;
+len = 0;
+while (*s)
+{
+len++;
+s++;
+}
+return (len);
 }
 
-/**
- * argstostr - concatenates all the arguments of your program
- * @ac: argc
- * @av: arguments
- * Return: pointer to array
- */
 /**
  * argstostr - concatenates all the arguments of your program
  * @ac: argc
@@ -33,37 +27,32 @@ int _strlen(char *s)
 
 char *argstostr(int ac, char **av)
 {
-    char *s;
-    int len = 0, i, j, k = 0;
-
-    if (ac == 0 || av == NULL) /* validate input */
-        return (NULL);
-
-    /* find length to malloc */
-    for (i = 0; i < ac; i++)
-    {
-        len += _strlen(av[i]);
-    }
-    len += (ac + 1); /* add space for newlines and null terminator */
-
-    /* allocate memory and free if error */
-    s = malloc(len * sizeof(char));
-
-    if (s == NULL)
-    {
-        free(s);
-        return (NULL);
-    }
-
-    /* insert each arg into *str */
-    for (i = 0; i < ac; i++)
-    {
-        for (j = 0; j < _strlen(av[i]); j++)
-        {
-            s[k++] = av[i][j];
-        }
-        s[k++] = '\n';
-    }
-
-    return (s);
+int i = 0, j, indx = 0, len = 0;
+char *new_str;
+if (ac == 0 || av == NULL)
+{
+return (NULL);
+}
+while (i < ac)
+{
+len += _strlen(av[i]);
+i++;
+}
+len += (ac + 1);
+new_str = malloc(len);
+if (new_str == NULL)
+{
+free(new_str);
+return (NULL);
+}
+for (i = 0; i < ac; i++)
+{
+for (j = 0; j < _strlen(av[i]); j++)
+{
+new_str[indx++] = av[i][j];
+}
+new_str[indx++] = '\n';
+}
+new_str[indx] = '\0';
+return (new_str);
 }
