@@ -11,9 +11,7 @@
 int main(int argc, char *argv[])
 {
 int n, coins = 0;
-
-
-
+  
 if (argv[1][0] == '-')
 {
 printf("0\n");
