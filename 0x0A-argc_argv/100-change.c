@@ -14,8 +14,8 @@ int n, coins = 0;
 /* validate input */
 	if (argc != 2)
 	{
+		printf("Error\n");
 		
-		return (1);
 	}
 
 if (argv[1][0] == '-')
