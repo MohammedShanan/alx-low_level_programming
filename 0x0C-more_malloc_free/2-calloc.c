@@ -25,5 +25,4 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		*((char *)ptr + i) = 0; /* type cast assigning values*/
 
 	return (ptr);
-}(p);
 }
