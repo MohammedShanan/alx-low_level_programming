@@ -21,7 +21,7 @@ if (p == NULL)
 {
 return (NULL);
 }
-for (i = 0; i < nmemb * size; i++)
+for (i = 0; (size_t) i < nmemb * size; i++)
 {
 *((char *)p + 1) = 0;
 }
