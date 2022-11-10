@@ -1,4 +1,4 @@
-#include<stdlib.h>
+#include <stdlib.h>
 
 /**
  * _strlen - returns the length of a string
@@ -24,7 +24,7 @@ int i, j, len_1, len_2;
 char *ptr;
 len_1 = s1 != NULL ? _strlen(s1) : 0;
 len_2 = s2 != NULL ? _strlen(s2) : 0;
-if (n >= len_2)
+if ((int)n >= len_2)
 {
 n = len_2;
 }
@@ -37,11 +37,11 @@ for (i = 0; i < len_1; i++)
 {
 ptr[i] = s1[i];
 }
-for (j = 0; j < n; j++)
+for (j = 0; j < (int)n; j++)
 {
 ptr[i] = s2[j];
 i++;
 }
 ptr[i] = '\0';
-return (ptr);   
+return (ptr);
 }
