@@ -25,14 +25,11 @@ return (i);
 
 char *_strcpy(char *dest, char *src)
 {
-int i;
+	int i;
 
-for (i = 0; src[i]; i++)
-{
-dest[i] = src[i];
-}
-dest[i] = '\0';
-return (dest);
+	for (i = 0; i <= len(src); i++)
+		dest[i] = src[i];
+	return (dest);
 }
 /**
  * new_dog - create a new dog
