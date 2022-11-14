@@ -25,11 +25,14 @@ return (i);
 
 char *_strcpy(char *dest, char *src)
 {
-	int i;
+int i;
 
-	for (i = 0; i <= len(src); i++)
-		dest[i] = src[i];
-	return (dest);
+for (i = 0; src[i]; i++)
+{
+dest[i] = src[i];
+}
+dest[i] = '\0';
+return (dest);
 }
 /**
  * new_dog - create a new dog
@@ -40,28 +43,28 @@ char *_strcpy(char *dest, char *src)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *dt;
+dog_t *new_d;
 char *name_cp;
 char *owner_cp;
-dt = malloc(sizeof(dog_t));
-if (dt == NULL)
+new_d = malloc(sizeof(dog_t));
+if (new_d == NULL)
 {
 return (NULL);
 }
-dt->age = age;
+new_d->age = age;
 if (name != NULL)
 {
 name_cp = malloc(len(name) + 1);
 if (name_cp == NULL)
 {
-free(dt);
+free(new_d);
 return (NULL);
 }
-dt->name = _strcpy(name_cp, name_cp);
+new_d->name = _strcpy(name_cp, name);
 }
 else
 {
-dt->name = NULL;
+new_d->name = NULL;
 }
 if (owner != NULL)
 {
@@ -69,12 +72,12 @@ owner_cp = malloc(len(owner) + 1);
 if (owner_cp == NULL)
 {
 free(name_cp);
-free(dt);
+free(new_d);
 return (NULL);
 }
-dt->owner = _strcpy(owner_cp, owner);
+new_d->owner = _strcpy(owner_cp, owner);
 }
 else
-dt->owner = NULL;
-return (dt);
+new_d->owner = NULL;
+return (new_d);
 }
