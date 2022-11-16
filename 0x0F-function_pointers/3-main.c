@@ -27,7 +27,7 @@ if (fun == NULL)
 err;
 exit(99);
 }
-if ((fun == op_div || fun == op_mod) && b == 0)
+if ((argv[2][0] == '%' || argv[2][0] == '/') && b == 0)
 {
 err;
 exit(100);
