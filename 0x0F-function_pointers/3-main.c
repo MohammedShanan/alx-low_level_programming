@@ -22,9 +22,9 @@ exit(98);
 a = atoi(argv[1]);
 b = atoi(argv[3]);
 fun = get_op_func(argv[2]);
-if (fun == NULL || (argv[2][1] != '\0'))
+if (fun == NULL || argv[2][1] != '\0')
 {
-printf("Error\n");
+err;
 exit(99);
 }
 if ((fun == op_mod || fun == op_div) && b == 0)
