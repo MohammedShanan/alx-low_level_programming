@@ -18,7 +18,7 @@ return (2);
 f = main;
 for (i = 0; i < b; i++)
 {
-printf("%x\n", *(*(f + i)));
+printf("%p\n", *(*(f + i)));
 }
 return 0;
 }
