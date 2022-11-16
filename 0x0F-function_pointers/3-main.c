@@ -12,27 +12,27 @@
  */
 int main(int argc, char *argv[])
 {
-int a, b, res;
-int (*fun)(int, int);
-if (argc != 4)
-{
-err;
-exit(98);
-}
-a = atoi(argv[1]);
-b = atoi(argv[3]);
-fun = get_op_func(argv[2]);
-if (fun == NULL)
-{
-err;
-exit(99);
-}
-if ((argv[2][0] == '%' || argv[2][0] == '/') && b == 0)
-{
-err;
-exit(100);
-}
-res = fun(a, b);
-printf("%i\n", res);
-return (0);
+    int a, b, res;
+    int (*fun)(int, int);
+    if (argc != 4)
+    {
+        err;
+        exit(98);
+    }
+    a = atoi(argv[1]);
+    b = atoi(argv[3]);
+    fun = get_op_func(argv[2]);
+    if (fun == NULL)
+    {
+        err;
+        exit(99);
+    }
+    if ((argv[2][0] == '%' || argv[2][0] == '/') && argv[3][0] == '0')
+    {
+        err;
+        exit(100);
+    }
+    res = fun(a, b);
+    printf("%i\n", res);
+    return (0);
 }
