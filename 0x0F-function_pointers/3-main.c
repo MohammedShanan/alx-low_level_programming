@@ -34,5 +34,5 @@ exit(100);
 }
 res = fun(a, b);
 printf("%i\n", res);
-return 0;
+return (0);
 }
