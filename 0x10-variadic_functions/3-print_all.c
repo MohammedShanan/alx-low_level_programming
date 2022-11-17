@@ -49,28 +49,28 @@ printf("%s", s);
 void print_all(const char *const format, ...)
 {
 va_list ap;
-int i = 0, j;
+int i, j = 0;
 char *sep = "";
-datatype arr[] = {{'c', print_char},
-{'i', print_int},
-{'f', print_float},
-{'s', print_string},
-{'\0', NULL}};
+datatype choice[] = {{'c', print_char},
+    {'i', print_int},
+    {'f', print_float},
+    {'s', print_string},
+    {'\0', NULL}};
 va_start(ap, format);
-while (format[i] != '\0' && format != NULL)
+while (format != NULL && format[j] != '\0')
 {
-j = 0;
-while (arr[j].letter != '\0')
+i = 0;
+while (choice[i].letter != '\0')
 {
-if (arr[j].letter == format[i])
+if (choice[i].letter == format[j])
 {
 printf("%s", sep);
-arr[j].func(ap);
+choice[i].func(ap); /*access va_arg later*/
 sep = ", ";
 }
-j++;
-}
 i++;
+}
+j++;
 }
 va_end(ap);
 printf("\n");
