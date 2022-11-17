@@ -31,7 +31,8 @@ printf("%f", va_arg(ap, double));
  */
 void print_string(va_list ap)
 {
-char *s = va_arg(ap, char *);
+char *s;
+s = va_arg(ap, char *);
 if (s == NULL)
 {
 printf("(nil)");
