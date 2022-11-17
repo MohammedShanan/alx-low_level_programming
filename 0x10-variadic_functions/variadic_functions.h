@@ -16,12 +16,7 @@ void print_all(const char *const format, ...);
  */
 typedef struct prints
 {
-    char id;
-    void (*f) (va_list);
-}pts;
-typedef struct dt
-{
-    char letter;
-    void (*func)(va_list);
-} datatype;
+char id;
+void (*f)(va_list);
+} pts;
 #endif
