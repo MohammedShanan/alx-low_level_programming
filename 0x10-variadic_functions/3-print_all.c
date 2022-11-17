@@ -48,7 +48,6 @@ void print_all(const char *const format, ...)
 va_list ap;
 int i = 0, j = 0;
 char *sep = "";
-void (*func)(va_list);
 pts arr[] = {
 {'c', print_char},
 {'i', print_int},
@@ -64,8 +63,7 @@ while (arr[j].id != '\0')
 if (arr[j].id == format[i])
 {
 printf("%s", sep);
-func = arr[j].f;
-func(ap);
+arr[j].f(ap);
 sep = ", ";
 }
 j++;
