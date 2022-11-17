@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("ssss", "" , NULL, "k", 'k');
+    print_all("s", NULL);
     return (0);
 }

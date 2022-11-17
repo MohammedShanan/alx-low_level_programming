@@ -1,38 +1,44 @@
-
+#include <stdarg.h>
+#include <stdio.h>
 #include "variadic_functions.h"
+
 /**
  * print_char - prints char
- * @ap: argument parameter
+ * @valist: valist
  */
-
-void print_char(va_list ap)
+void print_char(va_list valist)
 {
-printf("%c", va_arg(ap, int));
+printf("%c", va_arg(valist, int));
 }
+
 /**
  * print_int - prints int
- * @ap: argument parameter
+ * @valist: valist
  */
-void print_int(va_list ap)
+void print_int(va_list valist)
 {
-printf("%d", va_arg(ap, int));
+printf("%d", va_arg(valist, int));
 }
+
 /**
  * print_float - prints float
- * @ap: argument parameter
+ * @valist: valist
  */
-void print_float(va_list ap)
+void print_float(va_list valist)
 {
-printf("%f", va_arg(ap, double));
+printf("%f", va_arg(valist, double));
 }
+
 /**
  * print_string - prints string
- * @ap: argument parameter
+ * @valist: valist
  */
-void print_string(va_list ap)
+void print_string(va_list valist)
 {
 char *s;
-s = va_arg(ap, char *);
+
+s = va_arg(valist, char *);
+
 if (s == NULL)
 {
 printf("(nil)");
@@ -40,37 +46,40 @@ return;
 }
 printf("%s", s);
 }
+
 /**
  * print_all - print varying input of ints, chars, floats, and strings
  * @format: an array of chars signifying which data type to print
  */
 void print_all(const char *const format, ...)
 {
-va_list ap;
-int i = 0, j = 0;
-char *sep = "";
-pts arr[] = {
-{'c', print_char},
+char *separator = "";
+int i, j = 0;
+va_list valist;
+
+datatype choice[] = {{'c', print_char},
 {'i', print_int},
 {'f', print_float},
 {'s', print_string},
 {'\0', NULL}};
-va_start(ap, format);
-while (format[i] != '\0' && format != NULL)
+
+/* iterate format; if datatype matched, access function via struct */
+va_start(valist, format);
+while (format != NULL && format[j] != '\0')
 {
-j = 0;
-while (arr[j].id != '\0')
+i = 0;
+while (choice[i].letter != '\0')
 {
-if (arr[j].id == format[i])
+if (choice[i].letter == format[j])
 {
-printf("%s", sep);
-arr[j].f(ap);
-sep = ", ";
-}
-j++;
+printf("%s", separator);
+choice[i].func(valist); /*access va_arg later*/
+separator = ", ";
 }
 i++;
 }
-va_end(ap);
+j++;
+}
+va_end(valist);
 printf("\n");
 }

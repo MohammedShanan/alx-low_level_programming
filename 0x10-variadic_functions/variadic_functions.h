@@ -14,4 +14,9 @@ typedef struct prints
     char id;
     void (*f) (va_list);
 }pts;
+typedef struct dt
+{
+    char letter;
+    void (*func)(va_list);
+} datatype;
 #endif
