@@ -7,7 +7,7 @@
 
 void print_char(va_list ap)
 {
-    printf("%c", va_arg(ap, int));
+printf("%c", va_arg(ap, int));
 }
 /**
  * print_int - prints int
@@ -15,7 +15,7 @@ void print_char(va_list ap)
  */
 void print_int(va_list ap)
 {
-    printf("%d", va_arg(ap, int));
+printf("%d", va_arg(ap, int));
 }
 /**
  * print_float - prints float
@@ -23,7 +23,7 @@ void print_int(va_list ap)
  */
 void print_float(va_list ap)
 {
-    printf("%f", va_arg(ap, double));
+printf("%f", va_arg(ap, double));
 }
 /**
  * print_string - prints string
@@ -31,16 +31,16 @@ void print_float(va_list ap)
  */
 void print_string(va_list ap)
 {
-    char *s;
+char *s;
 
-    s = va_arg(ap, char *);
+s = va_arg(ap, char *);
 
-    if (s == NULL)
-    {
-        printf("(nil)");
-        return;
-    }
-    printf("%s", s);
+if (s == NULL)
+{
+printf("(nil)");
+return;
+}
+printf("%s", s);
 }
 /**
  * print_all - print varying input of ints, chars, floats, and strings
@@ -48,30 +48,30 @@ void print_string(va_list ap)
  */
 void print_all(const char *const format, ...)
 {
-    va_list ap;
-    int i, j = 0;
-    char *sep = "";
-    datatype arr[] = {{'c', print_char},
-                         {'i', print_int},
-                         {'f', print_float},
-                         {'s', print_string},
-                         {'\0', NULL}};
-    va_start(ap, format);
-    while (format != NULL && format[j] != '\0')
-    {
-        i = 0;
-        while (arr[i].letter != '\0')
-        {
-            if (arr[i].letter == format[j])
-            {
-                printf("%s", sep);
-                arr[i].func(ap); /*access va_arg later*/
-                sep = ", ";
-            }
-            i++;
-        }
-        j++;
-    }
-    va_end(ap);
-    printf("\n");
+va_list ap;
+int i, j = 0;
+char *sep = "";
+pts arr[] = {{'c', print_char},
+{'i', print_int},
+{'f', print_float},
+{'s', print_string},
+{'\0', NULL}};
+va_start(ap, format);
+while (format != NULL && format[j] != '\0')
+{
+i = 0;
+while (arr[i].id != '\0')
+{
+if (arr[i].id == format[j])
+{
+printf("%s", sep);
+arr[i].f(ap);
+sep = ", ";
+}
+i++;
+}
+j++;
+}
+va_end(ap);
+printf("\n");
 }
