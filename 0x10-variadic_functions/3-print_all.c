@@ -2,38 +2,38 @@
 #include "variadic_functions.h"
 /**
  * print_char - prints char
- * @ap: argument parameter
+ * @ap: a pointer argument parameter
  */
 
-void print_char(va_list ap)
+void print_char(va_list *ap)
 {
-printf("%c", va_arg(ap, int));
+printf("%c", va_arg(*ap, int));
 }
 /**
  * print_int - prints int
- * @ap: argument parameter
+ * @ap: a pointer argument parameter
  */
-void print_int(va_list ap)
+void print_int(va_list *ap)
 {
-printf("%d", va_arg(ap, int));
+printf("%d", va_arg(*ap, int));
 }
 /**
  * print_float - prints float
- * @ap: argument parameter
+ * @ap: a pointer argument parameter
  */
-void print_float(va_list ap)
+void print_float(va_list *ap)
 {
-printf("%f", va_arg(ap, double));
+printf("%f", va_arg(*ap, double));
 }
 /**
  * print_string - prints string
- * @ap: argument parameter
+ * @ap: a pointer argument parameter
  */
-void print_string(va_list ap)
+void print_string(va_list *ap)
 {
 char *s;
 
-s = va_arg(ap, char *);
+s = va_arg(*ap, char *);
 
 if (s == NULL)
 {
@@ -65,7 +65,7 @@ while (arr[i].id != '\0')
 if (arr[i].id == format[j])
 {
 printf("%s", sep);
-arr[i].f(ap);
+arr[i].f(&ap);
 sep = ", ";
 }
 i++;

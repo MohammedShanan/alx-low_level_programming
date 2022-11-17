@@ -17,6 +17,6 @@ void print_all(const char *const format, ...);
 typedef struct prints
 {
 char id;
-void (*f)(va_list);
+void (*f)(va_list *);
 } pts;
 #endif
