@@ -42,7 +42,14 @@ if (node->str == NULL)
 return (NULL);
 }
 node->len = _strlen(node->str);
+if (head == NULL)
+{
+node->next = NULL;
+}
+else
+{
 node->next = *head;
+}
 *head = node;
 return (*head);
 }
