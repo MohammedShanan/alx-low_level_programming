@@ -41,10 +41,6 @@ if (strdup(str) == NULL)
 return (NULL);
 }
 node->str = strdup(str);
-if (node->str == NULL)
-{
-return (NULL);
-}
 node->len = _strlen(node->str);
 if (head == NULL)
 {
