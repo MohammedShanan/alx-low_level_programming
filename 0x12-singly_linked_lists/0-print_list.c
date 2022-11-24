@@ -13,11 +13,11 @@ while (h)
 {
 if (h->str)
 {
-printf("[%i] %s", h->len, h->str);
+printf("[%i] %s\n", h->len, h->str);
 }
 else
 {
-printf("[0] (nil)");
+printf("[0] (nil)\n");
 }
 h = h->next;
 count++;
