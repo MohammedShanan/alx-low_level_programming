@@ -1,6 +1,6 @@
-globl _Start
+global main
 section .text:
-_Start
+main:
     mov eax, 0x4
     mov ebx, 1
     mov ecx, massage
