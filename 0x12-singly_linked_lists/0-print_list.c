@@ -7,19 +7,20 @@
 
 size_t print_list(const list_t *h)
 {
-list_t *tmp = h;
-int count = 0;
-while (tmp)
+
+unsigned int count = 0;
+while (h)
 {
-if (tmp->str)
+if (h->str)
 {
-printf("[%i] %s", tmp->len, tmp->str);
+printf("[%i] %s", h->len, h->str);
 }
 else
 {
-printf("[0] (nil)", tmp->len, tmp->str);
+printf("[0] (nil)");
 }
-tmp = tmp->next;
+h = h->next;
+count++;
 }
 return (count);
 }
