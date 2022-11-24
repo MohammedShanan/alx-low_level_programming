@@ -6,7 +6,7 @@
  * Return: length
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 int len;
 len = 0;
@@ -27,29 +27,26 @@ return (len);
 
 list_t *add_node(list_t **head, const char *str)
 {
-list_t *node = malloc(sizeof(list_t));
-if (node == NULL)
-{
+list_t *new_node; /* create new node */
+
+if (str == NULL) /* validate input */
 return (NULL);
-}
-if (str == NULL)
-{
+if (strdup(str) == NULL) /*check if strdup malloc errored */
 return (NULL);
-}
-if (strdup(str) == NULL)
-{
+
+new_node = malloc(sizeof(list_t)); /* malloc for new node */
+if (new_node == NULL)
 return (NULL);
-}
-node->str = strdup(str);
-node->len = _strlen(node->str);
-if (head == NULL)
-{
-node->next = NULL;
-}
+
+new_node->str = strdup(str); /* set node values */
+new_node->len = _strlen(str);
+
+if (head == NULL) /* set what new node points to first */
+new_node->next = NULL;
 else
-{
-node->next = *head;
-}
-*head = node;
-return (node);
+new_node->next = *head;
+
+*head = new_node; /* set head to point to new node */
+
+return (new_node);
 }

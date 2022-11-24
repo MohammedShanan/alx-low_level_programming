@@ -36,11 +36,11 @@ list_t *add_node_end(list_t **head, const char *str)
     {
         return (NULL);
     }
-    node->str = strdup(str);
-    if (node->str == NULL)
+    if (strdup(str) == NULL)
     {
         return (NULL);
     }
+    node->str = strdup(str);
     node->len = _strlen(node->str);
     if (head == NULL)
     {
