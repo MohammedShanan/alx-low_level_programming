@@ -51,5 +51,5 @@ else
 node->next = *head;
 }
 *head = node;
-return (*head);
+return (node);
 }
