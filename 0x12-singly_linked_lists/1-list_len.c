@@ -7,12 +7,10 @@
 
 size_t list_len(const list_t *h)
 {
-list_t *tmp;
-tmp = h;
 unsigned int count = 0;
-while (tmp)
+while (h)
 {
-tmp = tmp->next;
+h = h->next;
 count++;
 }
 return (count);
