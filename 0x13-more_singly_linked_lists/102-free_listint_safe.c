@@ -4,9 +4,9 @@
  * @head: pointer to head pointer of linked list
  * Return: length of ist
  */
-size_t len_list_safe(const listint_t *head)
+size_t len_list(listint_t *head)
 {
-const listint_t *cat, *mouse;
+listint_t *cat, *mouse;
 size_t counter = 0;
 cat = mouse = head;
 while (cat && mouse && mouse->next)
@@ -29,13 +29,13 @@ return (counter);
 return (counter);
 }
 /**
- * detect_loop - detect if there is a loop or not
+ * find_loop_start - find loop start
  * @head: pointer to head pointer of linked list
  * Return: loop entry point
  */
-const listint_t *detect_loop(const listint_t *head)
+listint_t *find_loop_start(listint_t *head)
 {
-const listint_t *cat, *mouse;
+listint_t *cat, *mouse;
 cat = mouse = head;
 while (cat && mouse && mouse->next)
 {
@@ -59,33 +59,32 @@ return (NULL);
  * @head: pointer to head pointer of linked list
  * Return: number of nodes in list, exit(98) if failed
  */
-size_t print_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
 size_t i = 0, len_l = 0;
-const listint_t *tmp, *loop_start;
-tmp = head;
-if (head == NULL)
+listint_t *tmp, *loop_start;
+if (*h == NULL)
 {
 exit(98);
 }
-loop_start = detect_loop(head);
+loop_start = find_loop_start(*h);
 if (loop_start != NULL)
 {
-len_l = len_list_safe(head);
-while (i < len_l)
+len_l = len_list(*h);
+for (i = 0; i < len_l; i++)
 {
-printf("[%p] %d\n", (void *)tmp, tmp->n);
-tmp = tmp->next, i++;
+tmp = *h;
+*h = i < len_l - 1 ? tmp->next : NULL;
+free(tmp);
 }
-printf("-> [%p] %d\n", (void *)loop_start, tmp->n);
 }
 else
 {
-while (tmp)
+for (len_l = 0; *h; len_l++)
 {
-printf("[%p] %d\n", (void *)tmp, tmp->n);
-tmp = tmp->next;
-len_l++;
+tmp = *h;
+*h = tmp->next;
+free(tmp);
 }
 }
 return (len_l);
