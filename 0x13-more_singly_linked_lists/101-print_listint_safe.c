@@ -33,7 +33,7 @@ return (counter);
  * @head: pointer to head pointer of linked list
  * Return: 1 if loop is found 0 if not
  */
-int detect_loop(const listint_t *head)
+const listint_t *detect_loop(const listint_t *head)
 {
 const listint_t *cat, *mouse;
 cat = mouse = head;
@@ -43,10 +43,16 @@ cat = cat->next;
 mouse = mouse->next->next;
 if (cat == mouse)
 {
-return (1);
+cat = head;
+while (cat != mouse)
+{
+cat = cat->next;
+mouse = mouse->next;
+}
+return (cat);
 }
 }
-return (0);
+return (NULL);
 }
 /**
  * print_listint_safe - prints list with addresses
@@ -56,21 +62,22 @@ return (0);
 size_t print_listint_safe(const listint_t *head)
 {
 size_t i = 0, len_l = 0;
-const listint_t *tmp;
+const listint_t *tmp, *loop_start;
 tmp = head;
 if (head == NULL)
 {
 exit(98);
 }
-if (detect_loop(head))
+loop_start = detect_loop(head);
+if (loop_start != NULL)
 {
 len_l = len_list_safe(head);
 while (i < len_l)
 {
 printf("[%p] %d\n", (void *)tmp, tmp->n);
-tmp = tmp->next;
-i++;
+tmp = tmp->next, i++;
 }
+printf("-> [%p] %d\n", (void *)loop_start, tmp->n);
 }
 else
 {
