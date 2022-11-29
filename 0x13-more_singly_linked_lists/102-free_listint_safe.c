@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * len_list_safe - find the length of the list
+ * len_list - find the length of the list
  * @head: pointer to head pointer of linked list
  * Return: length of ist
  */
@@ -55,17 +55,17 @@ return (cat);
 return (NULL);
 }
 /**
- * print_listint_safe - prints list with addresses
- * @head: pointer to head pointer of linked list
- * Return: number of nodes in list, exit(98) if failed
+ * free_listint_safe - free linked list
+ * @h: pointer to head pointer of linked list
+ * Return: number of nodes in list freed
  */
 size_t free_listint_safe(listint_t **h)
 {
-size_t i = 0, len_l = 0;
+size_t i, len_l;
 listint_t *tmp, *loop_start;
 if (*h == NULL)
 {
-exit(98);
+return (0);
 }
 loop_start = find_loop_start(*h);
 if (loop_start != NULL)
