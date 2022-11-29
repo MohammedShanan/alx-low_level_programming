@@ -66,7 +66,7 @@ const listint_t *tmp, *loop_start;
 tmp = head;
 if (head == NULL)
 {
-exit(98);
+return (0);
 }
 loop_start = detect_loop(head);
 if (loop_start != NULL)
