@@ -12,7 +12,7 @@ unsigned int bits = 0;
 diff = n ^ m;
 do
 {
-bits += diff & 1;
+bits += (diff & 1);
 diff >>= 1;
 } while (diff > 0);
 return (bits);
