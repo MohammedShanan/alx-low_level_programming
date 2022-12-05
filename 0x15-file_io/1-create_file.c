@@ -28,7 +28,7 @@ return (len);
 
 int create_file(const char *filename, char *text_content)
 {
-int fd, chars_wrote;
+int fd, bytes_wrote;
 if (!filename)
 {
 return (-1);
@@ -43,8 +43,8 @@ if (!text_content)
 close(fd);
 return (1);
 }
-chars_wrote = write(fd, text_content, _strlen(text_content));
-if (chars_wrote == -1 || chars_wrote != _strlen(text_content))
+bytes_wrote = write(fd, text_content, _strlen(text_content));
+if (bytes_wrote == -1 || bytes_wrote != _strlen(text_content))
 {
 close(fd);
 return (-1);
