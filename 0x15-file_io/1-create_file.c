@@ -44,7 +44,7 @@ close(fd);
 return (1);
 }
 chars_wrote = write(fd, text_content, _strlen(text_content));
-if (chars_wrote == -1)
+if (chars_wrote == -1 || chars_wrote != _strlen(text_content))
 {
 close(fd);
 return (-1);
