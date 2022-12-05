@@ -41,7 +41,7 @@ if (bytes_read == -1)
 {
 errors(98, file_1, fd_1);
 }
-bytes_wrote = write(fd_2, buff, 1024);
+bytes_wrote = write(fd_2, buff, bytes_read);
 if (bytes_wrote == -1)
 {
 errors(99, file_2, fd_2);
@@ -55,6 +55,7 @@ close(fd_1) == -1 ? (errors(100, NULL, fd_1)) : close(fd_1);
  * @exit_status: exit status value
  * @filename: file name
  * @fd: file descriptor
+ * Return: 0 on success
  **/
 int errors(int exit_status, char *filename, int fd)
 {
