@@ -33,7 +33,7 @@ if (!filename)
 {
 return (-1);
 }
-fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 600);
+fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 600);
 if (fd == -1)
 {
 return (-1);
