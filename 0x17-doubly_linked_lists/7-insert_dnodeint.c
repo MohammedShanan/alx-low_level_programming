@@ -50,7 +50,7 @@ return (NULL);
 }
 if (tmp->next == NULL)
 {
-return (add_dnodeint_end(h, n));
+return (insert_node(tmp, n));
 }
 return (insert_node(tmp, n));
 }
