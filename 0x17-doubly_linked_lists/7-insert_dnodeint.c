@@ -44,13 +44,11 @@ while (i < idx && tmp)
 tmp = tmp->next;
 i++;
 }
-if (tmp == NULL)
-{
+if (tmp == NULL && i != idx)
 return (NULL);
-}
-if (tmp->next == NULL)
+else if (tmp == NULL && i == idx)
 {
-return (insert_node(tmp, n));
+return (add_dnodeint_end(h, n));
 }
 return (insert_node(tmp, n));
 }
