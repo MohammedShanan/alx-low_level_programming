@@ -13,7 +13,7 @@ if (ht == NULL || ht->array == NULL)
 return;
 }
 
-printf("{");
+putchar('{');
 while (i < ht->size)
 {
 node = (ht->array)[i];
@@ -23,8 +23,7 @@ printf("%s'%s': '%s'", comma, node->key, node->value);
 comma = ", ";
 node = node->next;
 }
-
 i++;
 }
-printf("}");
+putchar('}');
 }
