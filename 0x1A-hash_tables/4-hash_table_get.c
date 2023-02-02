@@ -9,11 +9,11 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 hash_node_t *node;
 unsigned long int indx;
-indx = key_index((const unsigned char *)key, ht->size);
 if (ht == NULL || !key)
 {
 return (NULL);
 }
+indx = key_index((const unsigned char *)key, ht->size);
 node = (ht->array)[indx];
 while (node)
 {
