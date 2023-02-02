@@ -14,14 +14,14 @@ if (size == 0)
 return (NULL);
 }
 
-ht = malloc(sizeof(hash_node_t));
+ht = malloc(sizeof(hash_table_t));
 if (ht == NULL)
 {
 return (NULL);
 }
 
 array = malloc(sizeof(*array) * size);
-if (!array)
+if (array == NULL)
 {
 free(ht);
 return (NULL);
@@ -31,9 +31,7 @@ while (i < size)
 array[i] = NULL;
 i++;
 }
-
 ht->size = size;
 ht->array = array;
-
 return (ht);
 }
