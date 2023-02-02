@@ -49,7 +49,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 char *v;
 unsigned long int indx;
 hash_node_t *node;
-if (!ht || !(ht->array) || !key || key == "")
+if (!ht || !(ht->array) || !key || strlen(key) == 0)
 {
 return (0);
 }
