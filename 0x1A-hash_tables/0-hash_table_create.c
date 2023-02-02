@@ -21,7 +21,7 @@ return (NULL);
 }
 
 array = malloc(sizeof(*array) * size);
-if (array == NULL)
+if (!array)
 {
 free(ht);
 return (NULL);
@@ -31,7 +31,9 @@ while (i < size)
 array[i] = NULL;
 i++;
 }
+
 ht->size = size;
 ht->array = array;
+
 return (ht);
 }
