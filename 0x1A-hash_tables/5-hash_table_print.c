@@ -19,7 +19,7 @@ while (i < ht->size)
 node = (ht->array)[i];
 while (node)
 {
-printf("%s%s : %s", comma, node->key, node->value);
+printf("%s'%s' : '%s'", comma, node->key, node->value);
 comma = ", ";
 node = node->next;
 }
