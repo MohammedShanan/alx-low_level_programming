@@ -20,7 +20,7 @@ if (ht == NULL)
 return (NULL);
 }
 
-array = malloc(sizeof(hash_node_t *) * size);
+array = malloc(sizeof(*array) * size);
 if (array == NULL)
 {
 free(ht);
