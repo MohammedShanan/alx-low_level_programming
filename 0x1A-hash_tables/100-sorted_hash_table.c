@@ -170,27 +170,31 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @key: key
  * Return: value; or NULL if not found
  */
-
+/**
+ * shash_table_get - given key, get value
+ * @ht: hash table
+ * @key: key
+ * Return: value; or NULL if not found
+ */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-    unsigned long int indx;
-    shash_node_t *node;
-    if (!ht || !key)
-    {
-        return (NULL);
-    }
-    indx = key_index((const unsigned char *)key, ht->size);
-    node = (ht->array)[indx];
-    while (node)
-    {
-        if (strcmp(key, node->key) == 0)
-        {
-            return (node->value);
-        }
+    unsigned long int idx;
+    shash_node_t *tmp;
 
-        node = node->next;
-    }
-    return (NULL);
+    /* find index in hash table where key is */
+    /* look through linked list to find matching key for value */
+
+    if (!ht || !key)
+        return (NULL);
+    idx = key_index((const unsigned char *)key, ht->size);
+
+    tmp = (ht->array)[idx];
+    while (tmp != NULL && strcmp(tmp->key, key) != 0)
+        tmp = tmp->next;
+    if (!tmp)
+        return (NULL);
+    else
+        return (tmp->value);
 }
 /**
  * shash_table_print - print key/values of hash table in ascending order
@@ -200,12 +204,12 @@ void shash_table_print(const shash_table_t *ht)
 {
     shash_node_t *node;
     char *comma = "";
-
     if (!ht || !ht->array)
+    {
         return;
-
-    putchar('{');
+    }
     node = ht->shead;
+    putchar('{');
     while (node)
     {
         printf("%s'%s': '%s'", comma, node->key, node->value);
@@ -214,21 +218,21 @@ void shash_table_print(const shash_table_t *ht)
     }
     puts("}");
 }
-
 /**
- * shash_table_print_rev - print key/values of sorted hashtable in reverse order
+ * shash_table_print_rev - print key/values of sorted
+ * hashtable in reverse order
  * @ht: hash table
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
     shash_node_t *node;
     char *comma = "";
-
     if (!ht || !ht->array)
+    {
         return;
-
-    putchar('{');
+    }
     node = ht->stail;
+    putchar('{');
     while (node)
     {
         printf("%s'%s': '%s'", comma, node->key, node->value);
@@ -237,41 +241,43 @@ void shash_table_print_rev(const shash_table_t *ht)
     }
     puts("}");
 }
-
 /**
  * shash_table_delete - free and delete sorted hash table
  * @ht: hash table
  */
 void shash_table_delete(shash_table_t *ht)
 {
-    unsigned long int idx = 0;
-    shash_node_t *node, *next;
-
-    if (!ht)
+    unsigned long int i = 0;
+    shash_node_t *node, *tmp;
+    if (ht == NULL)
+    {
         return;
-
-    if (!(ht->array))
+    }
+    if (ht->array == NULL)
     {
         free(ht);
         return;
     }
-
-    while (idx < ht->size)
+    while (i < ht->size)
     {
-        node = (ht->array)[idx];
+        node = ((ht->array)[i]);
         while (node)
         {
-            next = node->next;
             if (node->key)
+            {
                 free(node->key);
+            }
             if (node->value)
+            {
                 free(node->value);
+            }
             node->key = NULL;
             node->value = NULL;
-            free(node);
-            node = next;
+            tmp = node;
+            node = node->next;
+            free(tmp);
         }
-        idx++;
+        i++;
     }
     free(ht->array);
     free(ht);
