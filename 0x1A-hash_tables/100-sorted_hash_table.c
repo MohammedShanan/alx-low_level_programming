@@ -69,19 +69,12 @@ int insert_to_sorted_list(shash_table_t *ht, shash_node_t *node)
         return (1);
     }
     tmp = ht->shead;
-    while (tmp->snext)
-    {
-        if (strcmp(node->key, (tmp->snext)->key) > 0)
-        {
-            node->snext = tmp->snext;
-            node->sprev = tmp;
-            (tmp->snext)->sprev = node;
-            tmp->snext = node;
-            break;
-        }
-
+    while (tmp->snext && strcmp(node->key, (tmp->snext)->key) > 0)
         tmp = tmp->snext;
-    }
+    node->snext = tmp->snext;
+    node->sprev = tmp;
+    (tmp->snext)->sprev = node;
+    tmp->snext = node;
     return (1);
 }
 /**
