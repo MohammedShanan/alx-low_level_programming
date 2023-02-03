@@ -46,35 +46,40 @@ shash_table_t *shash_table_create(unsigned long int size)
 int insert_to_sorted_list(shash_table_t *ht, shash_node_t *node)
 {
     shash_node_t *tmp;
-
-    /* if empty hash table, initialize head and tail nodes */
     if (!(ht->shead))
     {
         ht->shead = node;
         ht->stail = node;
-        return (1);
     }
-    if (strcmp(node->key, (ht->shead)->key) <= 0) /* insert at beginning */
+    if (strcmp(node->key, (ht->shead)->key) <= 0)
     {
         node->snext = ht->shead;
         (ht->shead)->sprev = node;
         ht->shead = node;
-        return (1);
     }
-    else if (strcmp(node->key, (ht->stail)->key) > 0) /* insert at end */
+    else if (strcmp(node->key, (ht->stail)->key) > 0)
     {
         node->sprev = ht->stail;
         (ht->stail)->snext = node;
         ht->stail = node;
-        return (1);
     }
-    tmp = ht->shead;
-    while (tmp->snext && strcmp(node->key, (tmp->snext)->key) > 0)
-        tmp = tmp->snext;
-    node->snext = tmp->snext;
-    node->sprev = tmp;
-    (tmp->snext)->sprev = node;
-    tmp->snext = node;
+    else
+    {
+        tmp = ht->shead;
+        while (tmp->snext)
+        {
+            if (strcmp(node->key, (tmp->snext)->key) > 0)
+            {
+                node->snext = tmp->snext;
+                node->sprev = tmp;
+                (tmp->snext)->sprev = node;
+                tmp->snext = node;
+                break;
+            }
+
+            tmp = tmp->snext;
+        }
+    }
     return (1);
 }
 /**
