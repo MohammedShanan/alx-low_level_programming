@@ -43,12 +43,6 @@ shash_table_t *shash_table_create(unsigned long int size)
  * @node: node to insert
  * Return: 1 if success, 0 if fail
  */
-/**
- * insert_to_sorted_list - compare abcs and insert node into list (for printing)
- * @ht: sorted hash table
- * @node: node to insert
- * Return: 1 if success, 0 if fail
- */
 int insert_to_sorted_list(shash_table_t *ht, shash_node_t *node)
 {
     shash_node_t *tmp;
@@ -65,22 +59,28 @@ int insert_to_sorted_list(shash_table_t *ht, shash_node_t *node)
         node->snext = ht->shead;
         (ht->shead)->sprev = node;
         ht->shead = node;
+        return (1);
     }
     else if (strcmp(node->key, (ht->stail)->key) > 0) /* insert at end */
     {
         node->sprev = ht->stail;
         (ht->stail)->snext = node;
         ht->stail = node;
+        return (1);
     }
-    else /* insert in middle */
+    tmp = ht->shead;
+    while (tmp->snext)
     {
-        tmp = ht->shead;
-        while (tmp->snext && strcmp(node->key, (tmp->snext)->key) > 0)
-            tmp = tmp->snext;
-        node->snext = tmp->snext;
-        node->sprev = tmp;
-        (tmp->snext)->sprev = node;
-        tmp->snext = node;
+        if (strcmp(node->key, (tmp->snext)->key) > 0)
+        {
+            node->snext = tmp->snext;
+            node->sprev = tmp;
+            (tmp->snext)->sprev = node;
+            tmp->snext = node;
+            break;
+        }
+
+        tmp = tmp->snext;
     }
     return (1);
 }
