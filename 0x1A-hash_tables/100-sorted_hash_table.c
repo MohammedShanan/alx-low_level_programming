@@ -185,7 +185,8 @@ node = node->next;
 return (NULL);
 }
 /**
- * shash_table_print - print key/values of hash table in ascending order
+ * shash_table_print - print key/values of
+ *  hash table in ascending order
  * @ht: hash table
  */
 void shash_table_print(const shash_table_t *ht)
