@@ -3,6 +3,7 @@
 Module Island Perimeter
 """
 
+
 def island_perimeter(grid):
     """ Calculate perimeter of grid where "1" is found"""
     visited = set()
@@ -26,3 +27,4 @@ def island_perimeter(grid):
         for j in range(len(grid[0])):
             if grid[i][j]:
                 return dfs(i, j)
+    return 0
