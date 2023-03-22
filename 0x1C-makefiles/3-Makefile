@@ -3,7 +3,6 @@ SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
-RM = rm -f
 
 # make all == makes executable
 all: m.h $(OBJ)
