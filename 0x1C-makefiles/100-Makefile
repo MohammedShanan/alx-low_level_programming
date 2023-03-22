@@ -1,14 +1,16 @@
+# Usage: make [all/clean/oclean/fclean] -f [file]
+
+
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # standard rule to say rules below are not filenames
 .PHONY: all clean oclean fclean re
 
-# make all == makes executable
+# makes executable
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
