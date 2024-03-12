@@ -30,7 +30,7 @@ printf("Searching in array: ");
 print_array(array, start, end);
 if (start >= end)
 {
-return (-1);
+return (array[half] == value ? half : -1);
 }
 if (array[half] == value)
 {
