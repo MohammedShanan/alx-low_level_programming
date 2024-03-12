@@ -1,5 +1,10 @@
 #include <stdio.h>
-
+/**
+ * print_array- prints an array.
+ * @array: array to be printed
+ * @start: starting index
+ * @end: last index
+ */
 void print_array(int *array, size_t start, size_t end)
 {
 size_t i;
@@ -33,11 +38,11 @@ return (half);
 }
 else if (array[half] < value)
 {
-return _binary_search(array, half + 1, end, value);
+return (_binary_search(array, half + 1, end, value));
 }
 else
 {
-return _binary_search(array, start, half - 1, value);
+return (_binary_search(array, start, half - 1, value));
 }
 }
 
@@ -51,5 +56,9 @@ return _binary_search(array, start, half - 1, value);
 
 int binary_search(int *array, size_t size, int value)
 {
-return _binary_search(array, 0, size - 1, value);
+if (array == NULL)
+{
+return (-1);
+}
+return (_binary_search(array, 0, size - 1, value));
 }
