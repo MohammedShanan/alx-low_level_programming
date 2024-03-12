@@ -28,15 +28,15 @@ int _binary_search(int *array, size_t start, size_t end, int value)
 size_t half = (start + end) / 2;
 printf("Searching in array: ");
 print_array(array, start, end);
-if (start >= end)
-{
-return (-1);
-}
 if (array[half] == value)
 {
 return (half);
 }
-else if (array[half] < value)
+if (start >= end)
+{
+return (-1);
+}
+if (array[half] < value)
 {
 return (_binary_search(array, half + 1, end, value));
 }
