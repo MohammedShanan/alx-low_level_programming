@@ -28,9 +28,9 @@ int _binary_search(int *array, size_t start, size_t end, int value)
 size_t half = (start + end) / 2;
 printf("Searching in array: ");
 print_array(array, start, end);
-if (start >= end)
+if (start > end)
 {
-return (array[half] == value ? half : -1);
+return (-1);
 }
 if (array[half] == value)
 {
